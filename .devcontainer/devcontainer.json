@@ -10,7 +10,47 @@
 
 	// Set *default* container specific settings.json values on container create.
 	"settings": { 
-		"terminal.integrated.shell.linux": "/bin/bash"
+		"terminal.integrated.shell.linux": "/bin/bash",
+		"codemap.py": [
+			{
+				"pattern": "(?<![^\\r\\n\\t\\f\\v .])class (.*?)[(|:]",
+				"clear": "class|:|\\)|\\(",
+				"prefix": "",
+				"role": "class",
+				"icon": "class"
+			},
+			{
+				"pattern": "def (.*?)[(|:]",
+				"clear": "def|:|\\(|\\)",
+				"suffix": "()",
+				"role": "function",
+				"icon": "function"
+			},
+			{
+				"pattern": "# #### (.*)",
+				"clear": "# ####",
+				"prefix": "#            ",
+				"icon": "none"
+			},
+			{
+				"pattern": "# ### (.*)",
+				"clear": "# ###",
+				"prefix": "#        ",
+				"icon": "level3"
+			},
+			{
+				"pattern": "# ## (.*)",
+				"clear": "# ##",
+				"prefix": "#    ",
+				"icon": "level2"
+			},
+			{
+				"pattern": "# # (.*)",
+				"clear": "# #",
+				"prefix": "#",
+				"icon": "level1"
+			},
+		]
 	},
 
 	// Add the IDs of extensions you want installed when the container is created.
