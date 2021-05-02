@@ -16,6 +16,16 @@
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
 		"coenraads.bracket-pair-colorizer",
+		"ms-ceintl.vscode-language-pack-ja",
+		"oleg-shilo.codemap",
+		"mrmlnc.vscode-duplicate",
+		"eamodio.gitlens",
+		"ryu1kn.partial-diff",
+		"christian-kohler.path-intellisense",
+		"ms-python.python",
+		"njpwerner.autodocstring",
+		"gruntfuggly.todo-tree",
+		"mosapride.zenkaku"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
