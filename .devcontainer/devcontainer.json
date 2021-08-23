@@ -1,0 +1,79 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.166.1/containers/ubuntu
+{
+	"name": "Ubuntu",
+	"build": {
+		"dockerfile": "Dockerfile",
+		// Update 'VARIANT' to pick an Ubuntu version: focal, bionic
+		"args": { "VARIANT": "focal" }
+	},
+
+	// Set *default* container specific settings.json values on container create.
+	"settings": { 
+		"terminal.integrated.shell.linux": "/bin/bash",
+		"codemap.py": [
+			{
+				"pattern": "(?<![^\\r\\n\\t\\f\\v .])class (.*?)[(|:]",
+				"clear": "class|:|\\)|\\(",
+				"prefix": "",
+				"role": "class",
+				"icon": "class"
+			},
+			{
+				"pattern": "def (.*?)[(|:]",
+				"clear": "def|:|\\(|\\)",
+				"suffix": "()",
+				"role": "function",
+				"icon": "function"
+			},
+			{
+				"pattern": "# #### (.*)",
+				"clear": "# ####",
+				"prefix": "#            ",
+				"icon": "none"
+			},
+			{
+				"pattern": "# ### (.*)",
+				"clear": "# ###",
+				"prefix": "#        ",
+				"icon": "level3"
+			},
+			{
+				"pattern": "# ## (.*)",
+				"clear": "# ##",
+				"prefix": "#    ",
+				"icon": "level2"
+			},
+			{
+				"pattern": "# # (.*)",
+				"clear": "# #",
+				"prefix": "#",
+				"icon": "level1"
+			},
+		]
+	},
+
+	// Add the IDs of extensions you want installed when the container is created.
+	"extensions": [
+		"coenraads.bracket-pair-colorizer",
+		"ms-ceintl.vscode-language-pack-ja",
+		"oleg-shilo.codemap",
+		"mrmlnc.vscode-duplicate",
+		"eamodio.gitlens",
+		"ryu1kn.partial-diff",
+		"christian-kohler.path-intellisense",
+		"ms-python.python",
+		"njpwerner.autodocstring",
+		"gruntfuggly.todo-tree",
+		"mosapride.zenkaku"
+	],
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "uname -a",
+
+	// Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+	"remoteUser": "vscode"
+}
